@@ -15,7 +15,18 @@
 <h1>Fake Pinterest - Meu primeiro site no ar</h1>
 
 <p>Agora vamos continuar nosso site</p> 
+{% block formulario %}
+<form method="post">
+{{ form.csrf_token }}
+  {{ form.email.label() }}
+  {{ form.email() }}
 
+  {{ form.senha.label() }}
+  {{ form.senha() }}
+
+  {{ form.botao_confirmacao() }}
+</form>
+{% endblock %}
 </body>
 {% endblock %}
 </html>
